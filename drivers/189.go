@@ -92,8 +92,8 @@ func (c Cloud189) Save(account *model.Account, old *model.Account) error {
 
 func (c Cloud189) FormatFile(file *Cloud189File) *model.File {
 	f := &model.File{
-		Name:      file.Name,
-		Size:      file.Size,
+		Name_:     file.Name,
+		Size_:     file.Size,
 		Driver:    "189Cloud",
 		UpdatedAt: nil,
 		Thumbnail: file.Icon.SmallUrl,
@@ -106,7 +106,7 @@ func (c Cloud189) FormatFile(file *Cloud189File) *model.File {
 	}
 	if file.Size == -1 {
 		f.Type = conf.FOLDER
-		f.Size = 0
+		f.Size_ = 0
 	} else {
 		f.Type = utils.GetFileType(filepath.Ext(file.Name))
 	}

@@ -70,8 +70,8 @@ func (n Native) Path(path string, account *model.Account) (*model.File, []*model
 			}
 			time := f.ModTime()
 			file := &model.File{
-				Name:      f.Name(),
-				Size:      f.Size(),
+				Name_:     f.Name(),
+				Size_:     f.Size(),
 				Type:      0,
 				UpdatedAt: &time,
 				Driver:    "Native",
@@ -91,8 +91,8 @@ func (n Native) Path(path string, account *model.Account) (*model.File, []*model
 	}
 	time := f.ModTime()
 	file := &model.File{
-		Name:      f.Name(),
-		Size:      f.Size(),
+		Name_:     f.Name(),
+		Size_:     f.Size(),
 		Type:      utils.GetFileType(filepath.Ext(f.Name())),
 		UpdatedAt: &time,
 		Driver:    "Native",

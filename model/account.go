@@ -107,8 +107,8 @@ func GetAccountFiles() ([]*File, error) {
 	}
 	for _, v := range accounts {
 		files = append(files, &File{
-			Name:      v.Name,
-			Size:      0,
+			Name_:     v.Name,
+			Size_:     0,
 			Type:      conf.FOLDER,
 			UpdatedAt: v.UpdatedAt,
 		})

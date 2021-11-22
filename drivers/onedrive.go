@@ -191,8 +191,8 @@ type OneRespErr struct {
 
 func (o Onedrive) FormatFile(file *OneFile) *model.File {
 	f := &model.File{
-		Name:      file.Name,
-		Size:      file.Size,
+		Name_:     file.Name,
+		Size_:     file.Size,
 		UpdatedAt: file.LastModifiedDateTime,
 		Driver:    "OneDrive",
 		Url:       file.Url,

@@ -142,8 +142,8 @@ type AliFile struct {
 
 func (a AliDrive) FormatFile(file *AliFile) *model.File {
 	f := &model.File{
-		Name:      file.Name,
-		Size:      file.Size,
+		Name_:     file.Name,
+		Size_:     file.Size,
 		UpdatedAt: file.UpdatedAt,
 		Thumbnail: file.Thumbnail,
 		Driver:    "AliDrive",

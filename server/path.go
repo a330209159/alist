@@ -75,7 +75,7 @@ func Path(c *gin.Context) {
 			tmpFiles := make([]*model.File, 0)
 			hideFiles := strings.Split(meta.Hide, ",")
 			for _, item := range files {
-				if !utils.IsContain(hideFiles, item.Name) {
+				if !utils.IsContain(hideFiles, item.Name_) {
 					tmpFiles = append(tmpFiles, item)
 				}
 			}

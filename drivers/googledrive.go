@@ -101,7 +101,7 @@ func (g GoogleDrive) IsDir(mimeType string) bool {
 
 func (g GoogleDrive) FormatFile(file *GoogleFile) *model.File {
 	f := &model.File{
-		Name:      file.Name,
+		Name_:     file.Name,
 		Driver:    "GoogleDrive",
 		UpdatedAt: file.ModifiedTime,
 		Thumbnail: "",
@@ -111,7 +111,7 @@ func (g GoogleDrive) FormatFile(file *GoogleFile) *model.File {
 		f.Type = conf.FOLDER
 	} else {
 		size, _ := strconv.ParseInt(file.Size, 10, 64)
-		f.Size = size
+		f.Size_ = size
 		f.Type = utils.GetFileType(filepath.Ext(file.Name))
 	}
 	return f

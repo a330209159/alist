@@ -104,7 +104,7 @@ func (p Pan123) Save(account *model.Account, old *model.Account) error {
 
 type Pan123File struct {
 	FileName  string     `json:"FileName"`
-	Size      int64      `json:"Size"`
+	Size      int64      `json:"Size_"`
 	UpdateAt  *time.Time `json:"UpdateAt"`
 	FileId    int64      `json:"FileId"`
 	Type      int        `json:"Type"`
@@ -114,8 +114,8 @@ type Pan123File struct {
 
 func (p Pan123) FormatFile(file *Pan123File) *model.File {
 	f := &model.File{
-		Name:      file.FileName,
-		Size:      file.Size,
+		Name_:     file.FileName,
+		Size_:     file.Size,
 		Driver:    "123Pan",
 		UpdatedAt: file.UpdateAt,
 	}
